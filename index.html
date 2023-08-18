@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometry Genius</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main>
+
+      <div class="flex  gap-4 " >
+
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+            <!-- Triangle card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8">
+              <figure>
+                <img src="./images/triangle.png" alt="triangle" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Triangle
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = 0.5 b x b</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="triangle-base"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="b"
+                />
+                <span class="">cm</span>
+                <input
+                  id="triangle-height"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="h"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="triangle-area">0</span>
+              </p>
+              <button
+                onclick="calculateTriangleArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            <!-- Rectangle card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8">
+              <figure>
+                <img src="./images/rectangle.png" alt="rectangle" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Rectangle
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = w x l</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="rectangle-w"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="w"
+                />
+                <span class="">cm</span>
+                <input
+                  id="rectangle-l"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="l"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="rectangle-area">0</span>
+              </p>
+              <button
+                onclick="calculateRectangleArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            <!-- Parallelogram card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8">
+              <figure>
+                <img src="./images/parallelogram.png" alt="Parallelogram" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Parallelogram
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = b x h</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="parallelogram-b"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="b"
+                />
+                <span class="">cm</span>
+                <input
+                  id="parallelogram-h"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="h"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="parallelogram-area">0</span>
+              </p>
+              <button
+                onclick="calculateParallelogramArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            <!-- Rhombus card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8 mt-8">
+              <figure>
+                <img src="./images/rhombus.png" alt="Parallelogram" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Parallelogram
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = b x h</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="rhombus-d1"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="b"
+                />
+                <span class="">cm</span>
+                <input
+                  id="rhombus-d2"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="h"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="rhombus-area">0</span>
+              </p>
+              <button
+                onclick="calculateRhombusArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            <!-- Pentagon card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8 mt-8">
+              <figure>
+                <img src="./images/pentagon.png" alt="Parallelogram" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Parallelogram
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = b x h</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="pentagon-pp"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="b"
+                />
+                <span class="">cm</span>
+                <input
+                  id="pentagon-pb"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="h"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="pentagon-area">0</span>
+              </p>
+              <button
+                onclick="calculatePentagonArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            <!-- Ellipse card -->
+            <div class="card card-compact w-96 bg-base-100 shadow-xl p-8 mt-8">
+              <figure>
+                <img src="./images/ellipse.png" alt="Parallelogram" />
+              </figure>
+              <h2 class="text-center text-3xl font-semibold mb-2 mt-5">
+                Ellipse
+              </h2>
+              <p class="text-xl text-center mb-2">Area (A) = b x h</p>
+              <div class="flex justify-center items-center gap-3">
+                <input
+                  id="ellipse-a"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="b"
+                />
+                <span class="">cm</span>
+                <input
+                  id="ellipse-b"
+                  type="text"
+                  class="w-5/12 p-2 rounded-lg"
+                  placeholder="h"
+                />
+              </div>
+              <p class="text-2xl text-center mt-2">
+                Area:
+                <span id="ellipse-area">0</span>
+              </p>
+              <button
+                onclick="calculateEllipseArea()"
+                class="btn btn-primary mt-3"
+              >
+                Calculate
+              </button>
+            </div>
+  
+            
+          
+        </div>
+
+        <!-- area calculator -->
+        <div class="w-[300px] mt-8" >
+          <div class="text-4xl">Area calculator</div>
+          <div id="calculation-entry">
+
+          </div>
+      </div>
+      </div>
+    </main>
+
+    <!-- js -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
